@@ -68,9 +68,6 @@ gem 'simple_form'
 gem 'dry-validation'
 gem 'dry-types'
 
-# API auth
-gem 'hawk-auth'
-
 # Internal Search Implementation
 gem 'pg_search'
 
@@ -80,6 +77,8 @@ gem 'sinatra', '>= 1.3.0'
 # Schedulable jobs for sidekiq
 gem 'sidekiq-cron', '~> 0.4.0'
 gem 'rufus-scheduler', '3.2.2'
+
+gem 'httparty'
 
 # converting between unicode and ascii urls
 gem 'simpleidn'
@@ -94,7 +93,6 @@ gem 'rails_or'
 # For Heroku & Add-Ons #
 ########################
 
-gem 'newrelic_rpm'
 gem 'rack-cache'
 gem 'memcachier'
 gem 'dalli' # Memcached Client
@@ -104,9 +102,6 @@ group :production, :staging do
   gem 'rails_12factor' # heroku recommends this
   gem 'heroku-deflater' # gzip compression
 end
-
-# email
-gem 'gibbon', '~> 1.2.0' # uses MailChimp API 2.0, remove version for 3.0+
 
 # Logging
 gem 'lograge' # opinionated slimmer logs for production

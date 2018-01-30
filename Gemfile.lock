@@ -698,9 +698,6 @@ GEM
     friendly_id (5.2.3)
       activerecord (>= 4.0.0)
     geocoder (1.4.4)
-    gibbon (1.2.1)
-      httparty
-      multi_json (>= 1.9.0)
     gli (2.17.1)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -714,7 +711,6 @@ GEM
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
     hashdiff (0.3.7)
-    hawk-auth (0.2.5)
     heroku-deflater (0.6.3)
       rack (>= 1.4.5)
     hirb (0.7.3)
@@ -822,7 +818,6 @@ GEM
     mustermann (1.0.1)
     nested_form (0.3.2)
     netrc (0.11.0)
-    newrelic_rpm (4.5.0.337)
     nio4r (2.1.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -1178,12 +1173,11 @@ DEPENDENCIES
   faraday_middleware
   ffaker
   foreman
-  gibbon (~> 1.2.0)
   haml
-  hawk-auth
   heroku-deflater
   hirb
   hogan_assets
+  httparty
   i18n-js
   kgio
   launchy
@@ -1198,7 +1192,6 @@ DEPENDENCIES
   minitest-rails-capybara
   mocha
   multi_json
-  newrelic_rpm
   nokogiri (= 1.6.7.2)
   pg
   pg_search
@@ -1261,4 +1254,4 @@ RUBY VERSION
    ruby 2.3.3p222
 
 BUNDLED WITH
-   1.15.3
+   1.15.4

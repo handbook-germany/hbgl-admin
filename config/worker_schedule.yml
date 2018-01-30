@@ -1,21 +1,6 @@
-expire_offers_job:
-  cron: "0 3 * * * Europe/Berlin" # every day at 03:00
-  class: "ExpiringOffersWorker"
-  queue: default
-
 regenerate_html_job:
   cron: "50 23 * * Thu Europe/Berlin" # every thursday at 00:00
   class: "RegenerateHtmlWorker"
-  queue: default
-
-subscribed_mails_spawner_job:
-  cron: "0 20 * * Mon Europe/Berlin" # every monday at 20:00
-  class: "SubscribedEmailsMailingsSpawnerWorker"
-  queue: default
-
-uninformed_mails_spawner_job:
-  cron: "30 20 * * 1 Europe/Berlin" # every monday at 20:30
-  class: "UninformedEmailsMailingsSpawnerWorker"
   queue: default
 
 check_websites_job:
@@ -28,16 +13,6 @@ check_unreachable_offers_job:
   cron: "0 4 * * Thu Europe/Berlin" # every thursday at 04:00
   class: "CheckUnreachableOffersWorker"
   queue: default
-
-check_for_new_contacts_job:
-  cron: "0 8,12,15,18 * * * Europe/Berlin" # every day at 8:00, 12:00, 15:00 and 18:00
-  class: "CheckForNewContactsWorker"
-  queue: default
-
-# sync_absences_job:
-#   cron: "0 3 * * Sat Europe/Berlin" # every Saturday at 3:00 a.m.
-#   class: "SyncAbsencesWorker"
-#   queue: heavy_load
 
 seasonal_offers_job:
   cron: "0 5 * * * Europe/Berlin" # every day at 05:00
