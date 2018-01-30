@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react'
 import OverviewPanel from '../components/OverviewPanel'
-import StatisticsContainer from '../containers/StatisticsContainer'
 import CollapsiblePanel from '../../CollapsiblePanel/containers/CollapsiblePanel'
 import ActualWaList from './ActualWaList'
 
@@ -28,12 +27,6 @@ export default class Dashboard extends React.Component {
           visible={true}
         >
           <OverviewPanel params={this.props.location.query}/>
-        </CollapsiblePanel>
-        <CollapsiblePanel
-          title='W&A Statistiken' identifier='overall-statistic-charts'
-          visible={false}
-        >
-          <StatisticsContainer />
         </CollapsiblePanel>
       </div>
     )

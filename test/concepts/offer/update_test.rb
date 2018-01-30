@@ -174,7 +174,7 @@ class OfferUpdateTest < ActiveSupport::TestCase
     it 'changes to complete state with the correct meta action' do
       new_offer.aasm_state.must_equal 'initialized'
       new_offer.valid?.must_equal true
-      assert_difference 'Statistic.count', 1 do
+      assert_no_difference 'Statistic.count' do
         operation_must_work(
           ::Offer::Update, id: new_offer.id, description: 'doesntMatter',
                            'meta' => { 'commit' => 'complete' }

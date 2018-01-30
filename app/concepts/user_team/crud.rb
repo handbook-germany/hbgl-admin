@@ -40,16 +40,6 @@ class UserTeam < ApplicationRecord
       step ::Lib::Macros::Nested::Find(:users, ::User)
     }
     step Contract::Persist()
-    step :update_team_statistic_on_user_change
     step ::Lib::Macros::Live::SendChanges()
-
-    def update_team_statistic_on_user_change options
-      if options['contract.default'].changed?('users')
-        Statistic::DailyTeamStatisticSynchronizer.new(
-          options['contract.default'].model.id, Time.zone.now.year
-        ).record!
-      end
-      true
-    end
   end
 end

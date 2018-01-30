@@ -25,7 +25,6 @@ module RailsAdmin
 
         register_instance_option :controller do
           proc do
-            old_state = @object.aasm_state
             contract = @object.class::Contracts::ChangeState.new(@object)
             object_valid_for_state_change = contract.valid?
             # NOTE Hacky hack hack: allow forced state-change to checkup and
@@ -41,10 +40,6 @@ module RailsAdmin
                       end
               @object.update_columns(aasm_state: state)
               flash[:success] = t('.success')
-              Statistic::UserAndParentTeamsCountHandler.record(
-                current_user, @object.class.name, 'aasm_state',
-                old_state, @object.aasm_state
-              )
             elsif object_valid_for_state_change && @object.send(
               "#{params[:event]}!"
             )
@@ -53,10 +48,6 @@ module RailsAdmin
                  params[:event] == 'approve'
                 @object.generate_translations!
               end
-              Statistic::UserAndParentTeamsCountHandler.record(
-                current_user, @object.class.name, 'aasm_state',
-                old_state, @object.aasm_state
-              )
             else
               error_message = t('.invalid', obj: @object.class.to_s)
               contract.errors.full_messages.each do |message|
