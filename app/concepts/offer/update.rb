@@ -28,7 +28,6 @@ class Offer::Update < Trailblazer::Operation
                                        ::TargetAudienceFiltersOffer::Create
     step ::Lib::Macros::Nested::Find :openings, ::Opening
     step ::Lib::Macros::Nested::Create :websites, ::Website::Create
-    step ::Lib::Macros::Nested::Find :logic_version, ::LogicVersion
   }
   step Contract::Persist()
   step :change_state_side_effect # prevents persist on faulty state change

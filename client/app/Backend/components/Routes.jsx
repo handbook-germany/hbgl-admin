@@ -170,15 +170,6 @@ export default class Routes extends React.Component {
             <Route path=':id/delete' component={MemberAction} />
           </Route>
 
-          <Route path='logic-versions'>
-            <IndexRoute component={Index}/>
-            <Route path='new' component={StandaloneGenericForm} />
-            <Route path='export' component={Export} />
-            <Route path=':id' component={MemberAction} />
-            <Route path=':id/edit' component={MemberAction} />
-            <Route path=':id/delete' component={MemberAction} />
-          </Route>
-
           <Route path='emails'>
             <IndexRoute component={Index}/>
             <Route path='new' component={StandaloneGenericForm} />

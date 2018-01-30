@@ -80,7 +80,6 @@ Rails.application.routes.draw do
       api_resources :target_audience_filters_offers, only: %i[index show]
       api_resources :next_steps
       api_resources :tags
-      api_resources :logic_versions
       api_resources :assignments, only: %i[index show create update]
       post 'time_allocations/:year/:week_number', controller: :time_allocations,
                                                   action: :report_actual

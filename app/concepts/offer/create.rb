@@ -7,7 +7,7 @@ class Offer::Create < Trailblazer::Operation
   step Policy::Pundit(PermissivePolicy, :create?)
   step Contract::Build(constant: Offer::Contracts::Create)
   step Contract::Validate()
-  step :save_section_id
+  step :inject_section_id
   step Wrap(::Lib::Transaction) {
     step ::Lib::Macros::Nested::Find :solution_category, ::SolutionCategory
     step ::Lib::Macros::Nested::Find :divisions, ::Division
@@ -22,7 +22,6 @@ class Offer::Create < Trailblazer::Operation
                                        ::TargetAudienceFiltersOffer::Create
     step ::Lib::Macros::Nested::Find :openings, ::Opening
     step ::Lib::Macros::Nested::Create :websites, ::Website::Create
-    step ::Lib::Macros::Nested::Find :logic_version, ::LogicVersion
   }
   step :set_creating_user
   step Contract::Persist()
@@ -33,7 +32,7 @@ class Offer::Create < Trailblazer::Operation
     model.update_column :slug, model.send(:set_slug)
   end
 
-  def save_section_id(options)
+  def inject_section_id(options)
     options['model'].section_id =
       options['contract.default'].divisions.first.section.id
   end

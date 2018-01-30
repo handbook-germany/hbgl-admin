@@ -34,8 +34,6 @@ module API::V1
           property :comment
           property :code_word
 
-          property :section_id
-          property :logic_version_id
           property :solution_category_id
           property :division_ids
           property :location_id
@@ -133,11 +131,6 @@ module API::V1
                  decorator: API::V1::Tag::Representer::Show,
                  populator: API::V1::Lib::Populators::FindOrInstantiate,
                  class: ::Tag
-
-        has_one :section,
-                decorator: API::V1::Section::Representer::Show,
-                populator: API::V1::Lib::Populators::Find,
-                class: ::Section
 
         has_one :solution_category,
                 decorator: API::V1::SolutionCategory::Representer::Show,

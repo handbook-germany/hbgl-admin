@@ -87,83 +87,60 @@ const routes = [
     access: all,
   }, {
     id: 14,
-    pathname: '/logic-versions',
-    anchor: 'LogicVersions',
-    access: all,
-  }, {
-    id: 15,
     pathname: '/assignments',
     anchor: 'Zuweisungen',
     access: all,
   }, {
-    id: 16,
+    id: 15,
     pathname: '/definitions',
     anchor: 'Definitions',
     access: all,
   }, {
-    id: 17,
+    id: 16,
     pathname: '/subscriptions',
     anchor: 'Newsletter Abos',
     access: all,
   }, {
-    id: 18,
-    pathname: '/contacts',
-    anchor: 'Kontaktanfragen',
-    access: all,
-  }, {
-    id: 19,
+    id: 17,
     pathname: '/update-requests',
     anchor: 'Update Requests',
     access: all,
   }, {
-    id: 20,
+    id: 18,
     pathname: '/cities',
     anchor: 'Städte',
     access: all,
   }, {
-    id: 21,
+    id: 19,
     pathname: '/areas',
     anchor: 'Areas',
     access: all,
   }, {
-    id: 22,
+    id: 20,
     pathname: '/federal-states',
     anchor: 'Bundesländer',
     access: all,
   }, {
-    id: 23,
+    id: 21,
     pathname: '/search-locations',
     anchor: 'SearchLocations',
     access: all,
   }, {
-    id: 24,
+    id: 22,
     pathname: '/language-filters',
     anchor: 'Language Filters',
     access: all,
   }, {
-    id: 25,
+    id: 23,
     pathname: '/user-teams',
     anchor: 'Teams',
     access: superuser,
   }, {
-    id: 26,
+    id: 24,
     pathname: '/users',
     anchor: 'Nutzer',
     access: superuser,
   }
-  /*,
-  {
-    id: 10,
-    pathname: '/statistic-charts',
-    anchor: 'Produktivitätsziele',
-    access: superuser,
-  }, {
-    id: 11,
-    pathname: '/time-allocations',
-    anchor: 'Ressourcenplanung',
-    access: superuser,
-  }
-  */
 ]
 
 function routesForRole(role) {

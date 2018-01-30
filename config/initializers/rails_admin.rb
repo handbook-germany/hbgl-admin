@@ -298,7 +298,6 @@ RailsAdmin.config do |config|
           Creator::Twin.new(bindings[:object]).creator
         end
       end
-      field :logic_version
       field :location
       field :approved_at
       field :organizations do

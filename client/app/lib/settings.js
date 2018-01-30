@@ -49,8 +49,7 @@ export default {
       fields: [
         'id', 'name', { 'divisions': ['label'] },
         { 'solution-category': ['name'] },
-        'aasm-state', 'created-by', 'expires-at', 'logic-version-id',
-        { section: ['name'] }
+        'aasm-state', 'created-by', 'expires-at'
       ],
       general_actions: [
         'index', 'export', 'new'
@@ -158,18 +157,6 @@ export default {
       ],
       member_actions: [
         'show', 'delete'
-      ]
-    },
-
-    'logic-versions': {
-      fields: [
-        'id', 'name', 'version'
-      ],
-      general_actions: [
-        'index', 'export', 'new'
-      ],
-      member_actions: [
-        'show', 'edit', 'delete'
       ]
     },
 

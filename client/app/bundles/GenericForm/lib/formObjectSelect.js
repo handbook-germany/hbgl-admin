@@ -6,7 +6,6 @@ import { OrgaCreateFormObject, OrgaUpdateFormObject }
 import WebsiteFormObject from '../forms/WebsiteFormObject'
 import LocationFormObject from '../forms/LocationFormObject'
 import CityFormObject from '../forms/CityFormObject'
-import LogicVersionFormObject from '../forms/LogicVersionFormObject'
 import AreaFormObject from '../forms/AreaFormObject'
 import FederalStateFormObject from '../forms/FederalStateFormObject'
 import ContactPersonFormObject from '../forms/ContactPersonFormObject'
@@ -35,8 +34,6 @@ export default function formObjectSelect(model, editing) {
     return LocationFormObject
   case 'cities':
     return CityFormObject
-  case 'logic-versions':
-      return LogicVersionFormObject
   case 'areas':
     return AreaFormObject
   case 'federal-states':

@@ -16,7 +16,7 @@ module Offer::Contracts
     property :aasm_state
     property :contact_people
     property :next_steps
-    property :logic_version
+    property :logic_version, writeable: false
     property :divisions
     property :starts_at
     property :ends_at

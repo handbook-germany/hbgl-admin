@@ -72,32 +72,32 @@ class DivisionUpdateFormObject extends GenericFormObject {
 }
 
 class DivisionCreateFormObject extends DivisionUpdateFormObject {
-  static get properties() {
-    return concat(['section'], DivisionUpdateFormObject.properties)
-  }
-
-  static get submodels() {
-    return concat(['section'], DivisionUpdateFormObject.submodels)
-  }
-
-  static get submodelConfig() {
-    return merge(
-      { section: { relationship: 'oneToOne' } },
-      DivisionUpdateFormObject.submodelConfig
-    )
-  }
-
-  static get formConfig() {
-    return merge(
-      { section: { type: 'filtering-select' } },
-      DivisionUpdateFormObject.formConfig
-    )
-  }
-
-  static get requiredInputs() {
-    return ['section']
-  }
-
+  // static get properties() {
+  //   return concat(['section'], DivisionUpdateFormObject.properties)
+  // }
+  //
+  // static get submodels() {
+  //   return concat(['section'], DivisionUpdateFormObject.submodels)
+  // }
+  //
+  // static get submodelConfig() {
+  //   return merge(
+  //     { section: { relationship: 'oneToOne' } },
+  //     DivisionUpdateFormObject.submodelConfig
+  //   )
+  // }
+  //
+  // static get formConfig() {
+  //   return merge(
+  //     { section: { type: 'filtering-select' } },
+  //     DivisionUpdateFormObject.formConfig
+  //   )
+  // }
+  //
+  // static get requiredInputs() {
+  //   return ['section']
+  // }
+  //
   static get readOnlyProperties() {
     return []
   }

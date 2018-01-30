@@ -23,7 +23,7 @@ class OfferCreateFormObject extends GenericFormObject {
       'hide-contact-people', 'encounter', 'location', 'area',
       'tags', 'trait-filters', 'language-filters',
       'target-audience-filters-offers', 'openings', 'opening-specification',
-      'websites', 'starts-at', 'ends-at', 'logic-version'
+      'websites', 'starts-at', 'ends-at'
     ]
   }
 
@@ -32,7 +32,7 @@ class OfferCreateFormObject extends GenericFormObject {
       'divisions', 'next-steps', 'contact-people', 'location',
       'area', 'tags', 'solution-category', 'trait-filters',
       'language-filters', 'target-audience-filters-offers', 'openings',
-      'websites', 'logic-version'
+      'websites'
     ]
   }
 
@@ -75,9 +75,6 @@ class OfferCreateFormObject extends GenericFormObject {
       websites: {
         object: WebsiteFormObject,
         relationship: 'oneToMany',
-      },
-      'logic-version': {
-        relationship: 'oneToOne',
       },
       'solution-category': {
         relationship: 'oneToOne',
@@ -125,7 +122,6 @@ class OfferCreateFormObject extends GenericFormObject {
       'starts-at': { type: 'date' },
       'ends-at': { type: 'date' },
       websites: { type: 'creating-multiselect' },
-      'logic-version': { type: 'filtering-select' },
       'solution-category': { type: 'filtering-select' },
     }
   }

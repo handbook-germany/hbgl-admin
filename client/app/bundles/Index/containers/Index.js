@@ -115,8 +115,6 @@ function headingFor(model) {
     return 'NextSteps'
   case 'areas':
     return 'Areas'
-  case 'logic-versions':
-    return 'LogicVersions'
   case 'search-locations':
     return 'SearchLocations'
   case 'contacts':
