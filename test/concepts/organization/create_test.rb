@@ -137,11 +137,10 @@ class OrganizationCreateTest < ActiveSupport::TestCase
     result =
       api_operation_wont_work API::V1::Organization::Create, params.to_json
     result['contract.default'].errors.to_h[:divisions].must_equal(
-      0 => { section: 'muss ausgefüllt werden' },
+      0 => { websites: { 0 => { url: 'ist nicht gültig' } } },
       1 => {
         city: 'Stadt oder Area muss ausgewählt sein',
-        area: 'Stadt oder Area muss ausgewählt sein',
-        section: 'muss ausgefüllt werden'
+        area: 'Stadt oder Area muss ausgewählt sein'
       }
     )
 
