@@ -7,7 +7,6 @@ class TimeAllocation::ReportActual < Trailblazer::Operation
   step Contract::Build()
   step Contract::Validate()
   step Contract::Persist()
-  step :log_statistics!
 
   extend Contract::DSL
   contract do
@@ -20,13 +19,6 @@ class TimeAllocation::ReportActual < Trailblazer::Operation
     options['model'] = TimeAllocation::DynamicFind.new(
       *essential_parameters(params, current_user)
     ).find_or_initialize
-  end
-
-  def log_statistics!(options, params:, current_user:, **)
-    ::Statistic::WeeklyStatisticAggregator.new(
-      *essential_parameters(params, current_user),
-      options['contract.default'].actual_wa_hours
-    ).record!
   end
 
   def essential_parameters(params, current_user)

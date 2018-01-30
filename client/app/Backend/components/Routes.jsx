@@ -9,16 +9,8 @@ import StandaloneGenericForm
 import Export from '../../bundles/Export/containers/Export'
 import DashboardContainer
   from '../../bundles/Dashboard/containers/DashboardContainer'
-import ShowStatisticChart
-  from '../../bundles/StatisticChartContainer/containers/PersonalStatisticChartContainer'
-import NewStatisticChart
-  from '../../bundles/NewStatisticChart/components/NewStatisticChart'
 import NewAssignment
   from '../../bundles/NewAssignment/containers/NewAssignmentForm'
-// import NewOrganization
-//   from '../../bundles/NewOrganization/containers/NewOrganizationForm'
-import TimeAllocationTableContainer
-  from '../../bundles/TimeAllocationTable/containers/TimeAllocationTableContainer'
 import StatisticsLayout
   from '../../bundles/Statistics/components/StatisticsLayout'
 import Overview from '../../bundles/Statistics/components/Overview'
@@ -34,11 +26,6 @@ import OrgaOfferCitiesOverview
   from '../../bundles/Statistics/components/OrgaOfferCitiesOverviewPage'
 import RatioOverviewPage
   from '../../bundles/Statistics/containers/RatioOverviewPage'
-// import OfferCreatedPage from '../../bundles/Statistics/components/OfferCreatedPage'
-// import OfferApprovedPage from '../../bundles/Statistics/components/OfferApprovedPage'
-// import OrgaCreatedPage from '../../bundles/Statistics/components/OrgaCreatedPage'
-// import OrgaApprovedPage from '../../bundles/Statistics/components/OrgaApprovedPage'
-// import StatisticChartPage from '../../bundles/Statistics/components/StatisticChartPage'
 import EditTranslation from
   '../../bundles/EditTranslation/containers/EditTranslation'
 
@@ -195,22 +182,6 @@ export default class Routes extends React.Component {
             <Route path=':id/edit' component={MemberAction} />
             <Route path=':id/delete' component={MemberAction} />
           </Route>
-
-          /*
-          <Route path='statistic_charts'>
-            <IndexRoute component={Index}/>
-            <Route path='new' component={NewStatisticChart} />
-            <Route path=':id' component={ShowStatisticChart} />
-          </Route>
-
-          <Route path='time_allocations'>
-            <IndexRoute component={TimeAllocationTableContainer}/>
-            <Route
-              path=':year/:week_number'
-              component={TimeAllocationTableContainer}
-            />
-          </Route>
-          */
 
           <Route path='statistics' component={StatisticsLayout}>
             <IndexRoute component={Overview}/>
