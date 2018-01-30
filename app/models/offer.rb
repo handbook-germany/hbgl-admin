@@ -76,13 +76,6 @@ class Offer < ApplicationRecord
 
   # Scopes
   scope :seasonal, -> { where.not(starts_at: nil, ends_at: nil) }
-  scope :by_mailings_enabled_organization, lambda {
-    joins(:organizations).where('organizations.mailings = ?', 'enabled')
-  }
-  scope :should_be_expired, lambda {
-    where('updated_at <= ?', Time.zone.today - 1.year).where(starts_at: nil)
-  }
-  # .where('expires_at <= ? AND starts_at IS null', Time.zone.today)
 
   # Getter Methods
 

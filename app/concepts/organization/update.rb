@@ -10,11 +10,8 @@ class Organization::Update < Trailblazer::Operation
     approve: Organization::Contracts::Approve,
     else: Organization::Contracts::Update
   )
-  step :epic_logging1
   step Contract::Build()
-  step :epic_logging2
   step Contract::Validate()
-  step :epic_logging3
   step Wrap(::Lib::Transaction) {
     step ::Lib::Macros::Nested::Create :website, Website::Create
     step ::Lib::Macros::Nested::Create :divisions, Division::Create
@@ -23,7 +20,6 @@ class Organization::Update < Trailblazer::Operation
     step ::Lib::Macros::Nested::Find :umbrella_filters, ::UmbrellaFilter
     step ::Lib::Macros::Nested::Find :topics, ::Topic
   }
-  step :epic_logging4
   step Contract::Persist()
   # step ::Lib::Macros::Debug::Breakpoint()
   step :change_state_side_effect # prevents persist on faulty state change
@@ -32,22 +28,6 @@ class Organization::Update < Trailblazer::Operation
   step :syncronize_done_state
   step :generate_translations!
   step ::Lib::Macros::Live::SendChanges()
-
-  def epic_logging1(options, **)
-    Rails.logger.debug "DEBUGGING Contract: #{options.inspect}"
-  end
-
-  def epic_logging2(options, **)
-    Rails.logger.debug "DEBUGGING Build: #{options.inspect}"
-  end
-
-  def epic_logging3(options, **)
-    Rails.logger.debug "DEBUGGING Validate: #{options.inspect}"
-  end
-
-  def epic_logging4(options, **)
-    Rails.logger.debug "DEBUGGING Transaction: #{options.inspect}"
-  end
 
   def change_state_side_effect(options, model:, params:, **)
     commit = params['meta'] && params['meta']['commit']

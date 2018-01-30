@@ -30,7 +30,6 @@ Dir[Rails.root.join('test/features/*.rb')].each { |f| require f }
 Dir[Rails.root.join('test/workers/*.rb')].each { |f| require f }
 Dir[Rails.root.join('test/objects/*.rb')].each { |f| require f }
 Dir[Rails.root.join('test/models/*.rb')].each { |f| require f }
-Dir[Rails.root.join('test/mailers/*.rb')].each { |f| require f }
 
 # For Sidekiq
 Sidekiq::Testing.inline!

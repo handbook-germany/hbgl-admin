@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
     data && data.offer != undefined && data.offer.ratio != undefined &&
       data.offer.ratio.family != undefined &&
       data.offer.ratio.refugees != undefined &&
-      data.organization != undefined &&
+      data.organization != undefined && data.organization.ratio != undefined &&
       data.organization.ratio.family != undefined &&
       data.organization.ratio.refugees != undefined
   )

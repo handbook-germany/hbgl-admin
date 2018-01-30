@@ -72,5 +72,8 @@ npm-debug.log
 client/npm-debug.log*
 node_modules
 
+# python env (needed by sme node modules)
+.python-version
+
 # Generated js bundles
 /app/assets/javascripts/generated/*
