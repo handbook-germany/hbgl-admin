@@ -39,9 +39,7 @@ module API::V1
           end
 
           link(:preview) do
-            ::RemoteShow.build_preview_link(
-              :angebote, represented.section.identifier, represented
-            )
+            ::RemoteShow.build_preview_link(:angebote, represented)
           end
         end
       end

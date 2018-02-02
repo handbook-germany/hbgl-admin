@@ -6,9 +6,9 @@ module RemoteShow
   #   redirect_to RemoteShow.build_preview_link(controller, identifier, instance)
   # end
 
-  def self.build_preview_link controller, identifier, instance
+  def self.build_preview_link controller, instance
     host = Rails.application.secrets.frontend_host
-    "#{host}/#{identifier}/preview/#{controller}/#{instance.slug}"
+    "#{host}/preview/#{controller}/#{instance.slug}"
   end
 
   # private
