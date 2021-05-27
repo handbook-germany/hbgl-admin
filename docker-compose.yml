@@ -1,0 +1,41 @@
+version: "3.3"
+
+services:
+  db:
+    image: postgres:13.1-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 111111
+      POSTGRES_DB: hbgltest
+    ports:
+      - 127.0.0.1:5432:5432
+    volumes:
+      - pg_ex:/var/lib/postgresql/data
+
+  pgadmin:
+    image: thajeztah/pgadmin4
+    ports:
+      - 127.0.0.1:5050:5050
+    volumes:
+      - pg_admin:/pgadmin
+    depends_on:
+      - db
+
+
+  psql:
+    image: postgres:13.1-alpine
+    entrypoint: psql
+    environment:
+      PGHOST: db
+      PGUSER: postgres
+      PGPASSWORD: 111111
+    depends_on:
+      - db
+  redis:
+    image: redis:6.0.9-alpine
+    ports:
+      - 127.0.0.1:6379:6379
+
+volumes:
+  pg_ex:
+  pg_admin:
